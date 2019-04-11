@@ -12,12 +12,23 @@ DESC_LIMIT_CODE2 equ  1111_0000000000000000b
 DESC_LIMIT_DATA2 equ  1111_0000000000000000b
 DESC_LIMIT_VIDEO2 equ 0000_0000000000000000b
 
-DESC_P equ               1_0000000000000000b
-DESC_DPL_0 equ            0_000000000000000b
+DESC_P equ                1_000000000000000b
+DESC_DPL_0 equ             00_0000000000000b
+DESC_DPL_1 equ             01_0000000000000b
+DESC_DPL_2 equ             10_0000000000000b
+DESC_DPL_3 equ             11_0000000000000b
 
-DESC_S_CODE equ            1_00000000000000b
-DESC_S_DATA equ            1_00000000000000b
-DESC_S_SYS  equ            0_00000000000000b
+DESC_S_CODE equ              1_000000000000b
+DESC_S_DATA equ              1_000000000000b
+DESC_S_SYS  equ              0_000000000000b
 
-DESC_TYPE_CODE equ          1000_0000000000b 
-DESC_TYPE_DATA equ          0010_0000000000b 
+DESC_TYPE_CODE equ            1000_00000000b 
+DESC_TYPE_DATA equ          	0010_00000000b 
+
+;selector
+TI_GDT equ  0_00b                
+TI_LDT equ  1_00b                
+RPL0   equ    00b
+RPL1   equ    01b
+RPL2   equ    10b
+RPL3   equ    11b

@@ -52,8 +52,12 @@ SECTION MBR vstart=0x7c00
 ;读取程序起始部分
 	mov eax,LOADER_START_SECTOR
 	mov bx,LOADER_BASE_ADDR
-	mov cx,1
+	mov cx,4
 	call rd_disk_m_16
+
+  mov byte [gs:0x10],'d'
+	mov byte [gs:0x11],0xA4   ;A表示绿色背景闪烁， 4表示前景色为红色
+
 
 	jmp LOADER_BASE_ADDR
 
@@ -111,7 +115,6 @@ rd_disk_m_16:
 	ret
 
 
-;  jmp $     ;无限循环
 
 ;	message db "1 MBR"  ;db=definebyte
 	times 510-($-$$) db 0
